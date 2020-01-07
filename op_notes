@@ -1,0 +1,27 @@
+Game-Plan:
+-CLI that scrapes https://www.anime-planet.com/anime/studios/ for top 5 studios, allows user to select a studio and find it's top 10
+shows/movies
+
+user types studios
+  shows list of top five studios according to Anime-Planet.com
+    "Here are the 5 most loved studios according to AnimePlanet:
+    	1.MADHOUSE
+    	2.Studio Ghibli
+    	3.Bones
+    	4.Kyoto Animation
+    	5.J.C.Staff"
+valid user commands:
+  1..5 correlating to studio
+  exit to quit CLI operation
+  studios to view list of top 5 studios
+    1..10 once in a studio to view information about that anime
+      #should return name, published year, synapsis?
+  #after each selection:
+    "Not interesting? Pick another studio to look at or type "exit" to leave:
+    	1.MADHOUSE
+    	2.Studio Ghibli
+    	3.Bones
+    	4.Kyoto Animation
+    	5.J.C.Staff"
+
+"Which studio's shows would you like to view? \n Please enter the correlating number:"
