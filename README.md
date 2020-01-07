@@ -7,13 +7,13 @@ Anime_Suggestor is a Ruby gem that allows you to search popular anime studios fo
 Use git clone to retrieve all necessary files for Anime_Suggestor
 
 ```bash
-$ git clone https://github.com/ebonyash15/Project_CLI.git
+$ git clone https://github.com/ebonyash15/Anime_Suggestor.git
 ```
 
 ## Usage
 
 ```Ruby
-$ Ruby Project_CLI
+$ run ./bin/console.rb
 
 $ 4 #select the corresponding number for a studio to find shows/movies
 $ menu #review the menu to select another studio to examine
