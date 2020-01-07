@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+  #installer line --tells program what language to use. MUST BE FIRST LINE.
+require './lib/Anime_Suggestor'
+#instantiate and call
+AnimeSuggestor::CLI.new.call
