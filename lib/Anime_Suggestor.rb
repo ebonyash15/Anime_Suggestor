@@ -1,6 +1,6 @@
-require "Project_CLI/version"
+require "Anime_Suggestor/version"
 
-module ProjectCLI
+module Anime_Suggestor
   class Error < StandardError; end
   # Your code goes here...
 end
