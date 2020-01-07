@@ -13,7 +13,7 @@ $ git clone https://github.com/ebonyash15/Anime_Suggestor.git
 ## Usage
 
 ```Ruby
-$ ./bin/console.rb
+$ ./bin/anime_suggestor
 
 $ 4 #select the corresponding number for a studio to find shows/movies
 $ menu #review the menu to select another studio to examine
