@@ -9,15 +9,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Ebony Sharrock'"]
   spec.email         = ["'ebonysharrock@gmail.com'"]
 
-  spec.summary       = %q{TO-DO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TO-DO: Write a longer description or delete this line.}
+  spec.summary       = %q{Browse top 5 anime studios according to Anime-Planet.com}
+  spec.description   = %q{View name, release date, and synapsis of top 10 anime shows/movies from Anime-Planet.com's top 5 studios.}
   spec.homepage      = "https://github.com/ebonyash15/Anime_Suggestor"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "http://mygemserver.com"
 
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/ebonyash15/Anime_Suggestor"
