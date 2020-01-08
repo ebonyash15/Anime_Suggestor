@@ -15,7 +15,7 @@ $ git clone https://github.com/ebonyash15/Anime_Suggestor.git
 ```Ruby
 $ ./bin/anime_suggestor
 
-$ 4 #select the corresponding number for a studio to find shows/movies
+$ 4 #select the corresponding number for a studio or show/movie to see more
 $ menu #review the menu to select another studio to examine
 $ exit #quit Anime_Suggestor
 
