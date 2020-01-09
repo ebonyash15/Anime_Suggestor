@@ -11,7 +11,7 @@ class AnimeSuggestor::Studios
       "Scrape anime 4",
       "Scrape anime 5",
       "Scrape anime 6",
-      "Scrape anime 7".
+      "Scrape anime 7",
       "Scrape anime 8",
       "Scrape anime 9",
       "Scrape anime 10"]
