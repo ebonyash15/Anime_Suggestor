@@ -1,12 +1,20 @@
 require 'nokogiri'
 require 'open-uri'
 module Scrape
-  def InstanceMethods
-  url = 'https://www.anime-planet.com/anime/studios/'
-  webpage=open(url)
-  xml=Nokogiri::HTML(webpage)
-  #anime = xml.css('STUFF')
+  module InstanceMethods
+    def something
+      url = 'https://www.anime-planet.com/anime/studios/'
+      webpage=open(url)
+      xml=Nokogiri::HTML(webpage)
+      studio = xml.css('a.href')
+      anime = xml.css('STUFF')
+    end
   end
-  def ClassMethods
+  module ClassMethods
+    def nothing
+      url = 'https://www.anime-planet.com/anime/studios/'
+      webpage=open(url)
+      xml=Nokogiri::HTML(webpage)
+    end
   end
 end

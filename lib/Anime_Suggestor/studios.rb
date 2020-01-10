@@ -1,9 +1,11 @@
 require 'pry'
 require_relative './concerns.rb'
+require 'nokogiri'
+require 'open-uri'
 class AnimeSuggestor::Studios
-  attr_accessor :name, :url, :animes
-  include Scrape::InstanceMethods
   extend Scrape::ClassMethods
+  include Scrape::InstanceMethods
+  attr_accessor :name, :url, :animes
   def self.today
     #returns the top five studios
     studio_1 = self.new
@@ -16,8 +18,13 @@ class AnimeSuggestor::Studios
     studio_4 =  self.new
     studio_5 =  self.new
     puts "List of studios"
-    studio = xml.css('a.href')
-    brinding.pry
   end
-
+  def scrape
+    url = 'https://www.anime-planet.com/anime/studios/'
+    webpage=open(url)
+    xml=Nokogiri::HTML(webpage)
+    studio = xml.css('a.href')
+    anime = xml.css('h3')
+    binding.pry
+  end
 end
