@@ -1,5 +1,0 @@
-require 'nokogiri'
-require 'open-uri'
-webpage=open('https://www.anime-planet.com/anime/studios/')
-xml=Nokogiri::HTML(webpage)
-#anime = xml.css('STUFF')

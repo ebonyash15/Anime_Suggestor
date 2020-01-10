@@ -1,7 +1,9 @@
 require 'pry'
-require_relative './bin/concerns'
+require_relative './concerns.rb'
 class AnimeSuggestor::Studios
   attr_accessor :name, :url, :animes
+  include Scrape::InstanceMethods
+  extend Scrape::ClassMethods
   def self.today
     #returns the top five studios
     studio_1 = self.new
@@ -17,4 +19,5 @@ class AnimeSuggestor::Studios
     studio = xml.css('a.href')
     brinding.pry
   end
+
 end

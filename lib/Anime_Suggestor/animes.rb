@@ -1,7 +1,9 @@
-require_relative './bin/concerns'
+require_relative './concerns.rb'
 class Anime
 @@all = []
 attr_accessor :studio, :name, :year, :synapsis
+include Scrape::InstanceMethods
+extend Scrape::ClassMethods
   def initialize
     @name=name
     @studio=studio
