@@ -1,3 +1,4 @@
+require_relative './bin/concerns'
 class Anime
 @@all = []
 attr_accessor :studio, :name, :year, :synapsis

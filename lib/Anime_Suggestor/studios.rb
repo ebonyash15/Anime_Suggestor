@@ -1,3 +1,5 @@
+require 'pry'
+require_relative './bin/concerns'
 class AnimeSuggestor::Studios
   attr_accessor :name, :url, :animes
   def self.today
@@ -12,5 +14,7 @@ class AnimeSuggestor::Studios
     studio_4 =  self.new
     studio_5 =  self.new
     puts "List of studios"
+    studio = xml.css('a.href')
+    brinding.pry
   end
 end
