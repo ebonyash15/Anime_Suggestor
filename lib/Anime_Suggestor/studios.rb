@@ -1,7 +1,5 @@
 require 'pry'
 require_relative './concerns.rb'
-require 'nokogiri'
-require 'open-uri'
 class AnimeSuggestor::Studios
   extend Scrape::ClassMethods
   include Scrape::InstanceMethods
