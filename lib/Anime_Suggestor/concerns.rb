@@ -5,14 +5,19 @@ url = 'https://www.anime-planet.com/anime/studios/?sort=num_likes&order=desc' #s
 webpage=open(url)
 xml=Nokogiri::HTML(webpage)
 studio_names = xml.css('h2').text
-studio_name.split(' ').join('').split /(?=[A-Z])/ #mostly seperated, array of incorrect strings
+wrongly = studio_names.split(' ').join('').split /(?=[A-Z])/ #mostly seperated, array of incorrect strings
 #  ["M", "A", "D", "H", "O", "U", "S", "E", "Studio", "Ghibli", "Bones", "Kyoto", "Animation", "J.", "C.", "Staff", "A
 #  -1", "Pictures", "Production", "I.", "G", "Shaft", "Sunrise", "Gainax", "Toei", "Animation", "Studio", "Deen", "G", "O"
 #  , "N", "Z", "O", "Studio", "Pierrot", "Brain's", "Base", "P.", "A.", "Worksufotable", "W", "H", "I", "T", "E", "F", "O"
 #  , "X", "X", "E", "B", "E", "C", "Manglobe", "Studio", "Trigger", "A", "I", "C", "T", "M", "S", "Entertainment", "Sateli
 #  ght", "S", "I", "L", "V", "E", "R", "L", "I", "N", "K", "Studio4°", "C", "Visual", "Works", "Co", "Mix", "Wave", "Films
 #  ", "Wit", "Studio", "A", "R", "M", "Sfeel.", "Artland", "B", "E", "E", "T", "R", "A", "I", "N8-", "Bit", "Zexcs"]
-studio_url = xml.css('h2.a')
+studio_1=wrongly[0..7].join('')
+studio_2=wrongly[8..9].join(' ')
+studio_3=wrongly[10]
+studio_4=wrongly[11..12].join(' ')
+studio_5="#{wrongly[13..14].join('')} #{wrongly[15]}"
+studio_url = xml.css('h2.a.href')
 #anime = xml.css('STUFF')
 binding.pry
 module Scrape
