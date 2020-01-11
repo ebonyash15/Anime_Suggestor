@@ -1,4 +1,5 @@
 #CLI Controller file - responsible for user interraction
+require_relative './studios.rb'
 class AnimeSuggestor::CLI
   def call
     list_studios
