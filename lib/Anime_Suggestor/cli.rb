@@ -7,7 +7,6 @@ class AnimeSuggestor::CLI
   end
   def list_studios
     puts "Anime-Planet's Top 5 Anime Studios:"
-    puts " studio1\n studio2\n studio3\n studio4\n studio5"
     #get top 5 studios
     @studios = AnimeSuggestor::Studios.today
   end
