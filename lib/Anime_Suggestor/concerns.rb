@@ -12,11 +12,16 @@ wrongly = studio_names.split(' ').join('').split /(?=[A-Z])/ #mostly seperated, 
 #  , "X", "X", "E", "B", "E", "C", "Manglobe", "Studio", "Trigger", "A", "I", "C", "T", "M", "S", "Entertainment", "Sateli
 #  ght", "S", "I", "L", "V", "E", "R", "L", "I", "N", "K", "Studio4°", "C", "Visual", "Works", "Co", "Mix", "Wave", "Films
 #  ", "Wit", "Studio", "A", "R", "M", "Sfeel.", "Artland", "B", "E", "E", "T", "R", "A", "I", "N8-", "Bit", "Zexcs"]
-studio_1=wrongly[0..7].join('')
-studio_2=wrongly[8..9].join(' ')
-studio_3=wrongly[10]
-studio_4=wrongly[11..12].join(' ')
-studio_5="#{wrongly[13..14].join('')} #{wrongly[15]}"
+studio_1=Studio.new
+studio_2=Studio.new
+studio_3=Studio.new
+studio_4=Studio.new
+studio_5=Studio.new
+studio_1.name=wrongly[0..7].join('')
+studio_2.name=wrongly[8..9].join(' ')
+studio_3.name=wrongly[10]
+studio_4.name=wrongly[11..12].join(' ')
+studio_5.name="#{wrongly[13..14].join('')} #{wrongly[15]}"
 studio_url = xml.css('h2.a.href')
 #anime = xml.css('STUFF')
 binding.pry
