@@ -1,8 +1,8 @@
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
-url = 'https://www.anime-planet.com/anime/studios/?sort=num_likes&order=desc' #studios sorted most to least loved
-webpage=open(url)
+s_url = 'https://www.anime-planet.com/anime/studios/?sort=num_likes&order=desc' #studios sorted most to least loved
+webpage=open(s_url)
 xml=Nokogiri::HTML(webpage)
 studio_names = xml.css('h2').text
 wrongly = studio_names.split(' ').join('').split /(?=[A-Z])/ #mostly seperated, array of incorrect strings
@@ -22,8 +22,18 @@ studio_2.name=wrongly[8..9].join(' ')
 studio_3.name=wrongly[10]
 studio_4.name=wrongly[11..12].join(' ')
 studio_5.name="#{wrongly[13..14].join('')} #{wrongly[15]}"
-studio_url = xml.css('h2.a.href')
-#anime = xml.css('STUFF')
+
+studio_url = xml.css('h2 a href') #Not yet working
+
+a_url = 'https://www.anime-planet.com/anime/studios/' #interpolate studio name once formatted (.downcase, ' '>'-', '.'>'')
+webpage=open(a_url)
+result=Nokogiri::HTML(webpage)
+anime.name = result.css('')
+anime.year = result.css('')
+anime.synapsis = result.css('')
+#some iteration 10.times do... anime.studio = studio_1
+#show names then allow user to select a name.year or name.synapsis
+
 binding.pry
 module Scrape
   module InstanceMethods
