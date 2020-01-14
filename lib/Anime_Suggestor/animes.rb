@@ -16,12 +16,13 @@ class Anime
 end
 
 formatted = self.studio.name.downcase.split('.').join('').split(' ').join('_')
-a_url = 'https://www.anime-planet.com/anime/studios/#{formatted}' #interpolate studio name once formatted (.downcase, ' '>'-', '.'>'')
+a_url = 'https://www.anime-planet.com/anime/studios/#{formatted}'
 webpage=open(a_url)
 result=Nokogiri::HTML(webpage)
-anime.name = result.css('')
-anime.year = result.css('')
-anime.synapsis = result.css('') n nn
+anime.name = result.css('h3')
+#anime.year = result.css('') #add later when ready
+#anime.synapsis = result.css('') #add later when ready
+
 #some iteration 10.times do... anime.studio = studio_1
 #show names then allow user to select a name.year or name.synapsis
 
