@@ -8,8 +8,7 @@ class AnimeSuggestor::CLI
   end
   def list_studios
     puts "Anime-Planet's Top 5 Anime Studios:"
-    #get top 5 studios
-    @studios = AnimeSuggestor::Studios.today
+    AnimeSuggestor::Studios.today
   end
   def menu
     puts "Which studio's shows would you like to view?\nPlease enter the correlating number:"

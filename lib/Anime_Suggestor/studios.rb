@@ -6,8 +6,11 @@ class AnimeSuggestor::Studios
   extend Scrape::ClassMethods
   include Scrape::InstanceMethods
   attr_accessor :name, :animes
+  def initialize
+    save
+  end
   def self.today
-    puts "List of studios"
+    puts self.all.collect{|studio|studio.name}
   end
   def scrape
     url = 'https://www.anime-planet.com/anime/studios/'
