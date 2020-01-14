@@ -5,7 +5,7 @@ class Anime
   extend Scrape::ClassMethods
   include Scrape::InstanceMethods
   @@all = []
-  attr_accessor :studio, :name, # :year, :synapsis
+  attr_reader :studio, :name, # :year, :synapsis
   def initialize
     @name=name
     @studio=studio
@@ -13,17 +13,18 @@ class Anime
   #  @synapsis=synapsis
     self.save
   end
+  def name=()
+    formatted = self.studio.name.downcase.split('.').join('').split(' ').join('_')
+    a_url = 'https://www.anime-planet.com/anime/studios/#{formatted}'
+    webpage=open(a_url)
+    result=Nokogiri::HTML(webpage)
+    anime.name = result.css('h3')
+    #some iteration 10.times do... anime.studio = studio_1
+  end
 end
 
-formatted = self.studio.name.downcase.split('.').join('').split(' ').join('_')
-a_url = 'https://www.anime-planet.com/anime/studios/#{formatted}'
-webpage=open(a_url)
-result=Nokogiri::HTML(webpage)
-anime.name = result.css('h3')
 #anime.year = result.css('') #add later when ready
 #anime.synapsis = result.css('') #add later when ready
-
-#some iteration 10.times do... anime.studio = studio_1
 #show names then allow user to select a name.year or name.synapsis
 
 ##<Nokogiri::XML::Element:0x176f8e4 name="h2" attributes=[#<Nokogiri::XML::Attr:0x17
