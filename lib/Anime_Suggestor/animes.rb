@@ -5,12 +5,12 @@ class Anime
   extend Scrape::ClassMethods
   include Scrape::InstanceMethods
   @@all = []
-  attr_accessor :studio, :name, :year, :synapsis
+  attr_accessor :studio, :name, # :year, :synapsis
   def initialize
     @name=name
     @studio=studio
-    @year=year
-    @synapsis=synapsis
+  #  @year=year
+  #  @synapsis=synapsis
     self.save
   end
 end
