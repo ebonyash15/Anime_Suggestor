@@ -11,9 +11,7 @@ class Anime
     @studio=studio
     @year=year
     @synapsis=synapsis
-  end
-  def self.all
-    @@all
+    self.save
   end
 end
 
@@ -22,7 +20,7 @@ webpage=open(a_url)
 result=Nokogiri::HTML(webpage)
 anime.name = result.css('')
 anime.year = result.css('')
-anime.synapsis = result.css('')
+anime.synapsis = result.css('') n nn
 #some iteration 10.times do... anime.studio = studio_1
 #show names then allow user to select a name.year or name.synapsis
 
