@@ -50,5 +50,3 @@ studio_2.name=wrongly[8..9].join(' ')
 studio_3.name=wrongly[10]
 studio_4.name=wrongly[11..12].join(' ')
 studio_5.name="#{wrongly[13..14].join('')} #{wrongly[15]}"
-
-studio_url = xml.css('h2 a href') #Not yet working
