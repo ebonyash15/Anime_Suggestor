@@ -5,18 +5,8 @@ require 'open-uri'
 class AnimeSuggestor::Studios
   extend Scrape::ClassMethods
   include Scrape::InstanceMethods
-  attr_accessor :name, :url, :animes
+  attr_accessor :name, :animes
   def self.today
-    #returns the top five studios
-    studio_1 = self.new
-    studio_1.name = "Scrape name"
-    studio_1.url = "Scrape url"
-    studio_1.animes = Anime.all.collect{|anime| anime.studio==self}
-
-    studio_2 =  self.new
-    studio_3 =  self.new
-    studio_4 =  self.new
-    studio_5 =  self.new
     puts "List of studios"
   end
   def scrape
@@ -26,6 +16,9 @@ class AnimeSuggestor::Studios
     studio = xml.css('a.href')
     anime = xml.css('h3')
     binding.pry
+  end
+  def animes
+    Anime.all.collect{|anime| anime.studio==self}
   end
 end
 
@@ -40,6 +33,7 @@ studio_2=Studio.new
 studio_3=Studio.new
 studio_4=Studio.new
 studio_5=Studio.new
+#Essentially hardcoding for formatting, will break if order changes. Review and revise.
 studio_1.name=wrongly[0..7].join('')
 studio_2.name=wrongly[8..9].join(' ')
 studio_3.name=wrongly[10]
