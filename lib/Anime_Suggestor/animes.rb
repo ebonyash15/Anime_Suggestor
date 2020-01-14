@@ -15,7 +15,8 @@ class Anime
   end
 end
 
-a_url = 'https://www.anime-planet.com/anime/studios/' #interpolate studio name once formatted (.downcase, ' '>'-', '.'>'')
+formatted = self.studio.name.downcase.split('.').join('').split(' ').join('_')
+a_url = 'https://www.anime-planet.com/anime/studios/#{formatted}' #interpolate studio name once formatted (.downcase, ' '>'-', '.'>'')
 webpage=open(a_url)
 result=Nokogiri::HTML(webpage)
 anime.name = result.css('')
