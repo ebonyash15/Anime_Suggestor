@@ -22,13 +22,28 @@ class Anime
     #some iteration 10.times do... anime.studio = studio_1
   end
 end
-
-#anime.year = result.css('') #add later when ready
-#anime.synapsis = result.css('') #add later when ready
-#show names then allow user to select a name.year or name.synapsis
-
-##<Nokogiri::XML::Element:0x176f8e4 name="h2" attributes=[#<Nokogiri::XML::Attr:0x17
-#6f86c name="itemprop" value="name">, #<Nokogiri::XML::Attr:0x176f858 name="class" value="collectionName theme-font">] c
-#hildren=[#<Nokogiri::XML::Element:0x176ee80 name="a" attributes=[#<Nokogiri::XML::Attr:0x176edf4 name="href" value="/an
-#ime/studios/studio-trigger">, #<Nokogiri::XML::Attr:0x176edb8 name="itemprop" value="url">] children=[#<Nokogiri::XML::
-#Text:0x176e23c "Studio Trigger">]>]>,
+1a1=Aninme.new(SCRAPED NAME, URL)
+s1a2=Aninme.new(SCRAPED NAME, URL)
+s1a3=Aninme.new(SCRAPED NAME, URL)
+s1a4=Aninme.new(SCRAPED NAME, URL)
+s1a5=Aninme.new(SCRAPED NAME, URL)
+s2a1=Aninme.new(SCRAPED NAME, URL)
+s2a2=Aninme.new(SCRAPED NAME, URL)
+s2a3=Aninme.new(SCRAPED NAME, URL)
+s2a4=Aninme.new(SCRAPED NAME, URL)
+s2a5=Aninme.new(SCRAPED NAME, URL)
+s3a1=Aninme.new(SCRAPED NAME, URL)
+s3a2=Aninme.new(SCRAPED NAME, URL)
+s3a3=Aninme.new(SCRAPED NAME, URL)
+s3a4=Aninme.new(SCRAPED NAME, URL)
+s3a5=Aninme.new(SCRAPED NAME, URL)
+s4a1=Aninme.new(SCRAPED NAME, URL)
+s4a2=Aninme.new(SCRAPED NAME, URL)
+s4a3=Aninme.new(SCRAPED NAME, URL)
+s4a4=Aninme.new(SCRAPED NAME, URL)
+s4a5=Aninme.new(SCRAPED NAME, URL)
+s5a1=Aninme.new(SCRAPED NAME, URL)
+s5a2=Aninme.new(SCRAPED NAME, URL)
+s5a3=Aninme.new(SCRAPED NAME, URL)
+s5a4=Aninme.new(SCRAPED NAME, URL)
+s5a5=Aninme.new(SCRAPED NAME, URL)
