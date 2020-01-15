@@ -4,14 +4,12 @@ require 'open-uri'
 class Anime
   extend Scrape::ClassMethods
   include Scrape::InstanceMethods
-  @@all = []
-  attr_reader :studio, :name, # :year, :synapsis
-  def initialize
+  attr_reader :studio, :name, :url
+  def initialize(name, url)
     @name=name
-    @studio=studio
-  #  @year=year
-  #  @synapsis=synapsis
-    self.save
+    @url=url
+    @studio=Studio.all.find{|studio|studio.url==url}
+    save
   end
   def name=()
     formatted = self.studio.name.downcase.split('.').join('').split(' ').join('_')

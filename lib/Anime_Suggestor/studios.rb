@@ -5,10 +5,11 @@ require 'open-uri'
 class AnimeSuggestor::Studios
   extend Scrape::ClassMethods
   include Scrape::InstanceMethods
-  attr_accessor :name, :animes, :url
+  @@all=[]
+  attr_accessor :name, :studio, :url
   def initialize(name)
     @name=name
-    @@all<<self
+    save
   end
   def self.today
     puts self.all.collect{|studio|studio.name}
