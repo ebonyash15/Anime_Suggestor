@@ -42,7 +42,7 @@ page5=open(url6)
 xml6=Nokogiri::HTML(page5)
 
 
-1a1=Aninme.new('SCRAPED NAME', url2
+s1a1=Aninme.new('SCRAPED NAME', url2)
 s1a2=Aninme.new('SCRAPED NAME', url2)
 s1a3=Aninme.new('SCRAPED NAME', url2)
 s1a4=Aninme.new('SCRAPED NAME', url2)

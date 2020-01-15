@@ -22,15 +22,15 @@ class AnimeSuggestor::Studios
     Anime.all.collect{|anime| anime.studio==self}
   end
   def studio=
-    Studio.all.find{|studio|studio.url==self.url}
+    self.class.all.find{|studio|studio.url==self.url}
   end
 end
 
 s_url = 'https://www.anime-planet.com/anime/studios/?sort=num_likes&order=desc' #studios sorted most to least loved
 webpage=open(s_url)
 xml=Nokogiri::HTML(webpage)
-studio_1=Studio.new(xml.css('a').text.scan(/(?<=tag)\w*[^0-9 ]/).to_s)
-studio_2=Studio.new(xml.css('a').text.split(/\d+ anime/)[1])
-studio_3=Studio.new(xml.css('a').text.split(/\d+ anime/)[2])
-studio_4=Studio.new(xml.css('a').text.split(/\d+ anime/)[3])
-studio_5=Studio.new(xml.css('a').text.split(/\d+ anime/)[4])
+studio_1=AnimeSuggestor::Studios.new(xml.css('a').text.scan(/(?<=tag)\w*[^0-9 ]/).to_s)
+studio_2=AnimeSuggestor::Studios.new(xml.css('a').text.split(/\d+ anime/)[1])
+studio_3=AnimeSuggestor::Studios.new(xml.css('a').text.split(/\d+ anime/)[2])
+studio_4=AnimeSuggestor::Studios.new(xml.css('a').text.split(/\d+ anime/)[3])
+studio_5=AnimeSuggestor::Studios.new(xml.css('a').text.split(/\d+ anime/)[4])
