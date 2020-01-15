@@ -13,14 +13,6 @@ class AnimeSuggestor::Studios
   def self.today
     puts self.all.collect{|studio|studio.name}
   end
-  def scrape
-    url = 'https://www.anime-planet.com/anime/studios/'
-    webpage=open(url)
-    xml=Nokogiri::HTML(webpage)
-    studio = xml.css('a.href')
-    anime = xml.css('h3')
-    binding.pry
-  end
   def animes
     Anime.all.collect{|anime| anime.studio==self}
   end
@@ -29,17 +21,8 @@ end
 s_url = 'https://www.anime-planet.com/anime/studios/?sort=num_likes&order=desc' #studios sorted most to least loved
 webpage=open(s_url)
 xml=Nokogiri::HTML(webpage)
-studio_names = xml.css('h2').text
-wrongly = studio_names.split(' ').join('').split /(?=[A-Z])/
-
-studio_1=Studio.new
-studio_2=Studio.new
-studio_3=Studio.new
-studio_4=Studio.new
-studio_5=Studio.new
-#Essentially hardcoding for formatting, will break if order changes. Review and revise.
-studio_1.name=wrongly[0..7].join('')
-studio_2.name=wrongly[8..9].join(' ')
-studio_3.name=wrongly[10]
-studio_4.name=wrongly[11..12].join(' ')
-studio_5.name="#{wrongly[13..14].join('')} #{wrongly[15]}"
+studio_1=Studio.new(xml.css('a').text.scan(/(?<=tag)\w*[^0-9 ]/).to_s)
+studio_2=Studio.new(xml.css('a').text.split(/\d+ anime/)[1])
+studio_3=Studio.new(xml.css('a').text.split(/\d+ anime/)[2])
+studio_4=Studio.new(xml.css('a').text.split(/\d+ anime/)[3])
+studio_5=Studio.new(xml.css('a').text.split(/\d+ anime/)[4])
