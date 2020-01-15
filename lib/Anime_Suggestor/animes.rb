@@ -1,14 +1,14 @@
 require_relative './concerns.rb'
 require 'nokogiri'
 require 'open-uri'
-class AnimeSuggestor::Anime
+class Anime
   extend Scrape::ClassMethods
   include Scrape::InstanceMethods
   attr_reader :studio, :name, :url
   def initialize(name, url)
     @name=name
     @url=url
-    @studio=AnimeSuggestor::Studios.all.find{|studio|studio.url==url}
+    @studio= Studios.all.find{|studio|studio.url==url}
     save
   end
   def name=()
@@ -42,28 +42,28 @@ page5=open(url6)
 xml6=Nokogiri::HTML(page5)
 
 
-s1a1=AnimeSuggestor::Anime.new('SCRAPED NAME', url2)
-s1a2=AnimeSuggestor::Anime.new('SCRAPED NAME', url2)
-s1a3=AnimeSuggestor::Anime.new('SCRAPED NAME', url2)
-s1a4=AnimeSuggestor::Anime.new('SCRAPED NAME', url2)
-s1a5=AnimeSuggestor::Anime.new('SCRAPED NAME', url2)
-s2a1=AnimeSuggestor::Anime.new('SCRAPED NAME', url3)
-s2a2=AnimeSuggestor::Anime.new('SCRAPED NAME', url3)
-s2a3=AnimeSuggestor::Anime.new('SCRAPED NAME', url3)
-s2a4=AnimeSuggestor::Anime.new('SCRAPED NAME', url3)
-s2a5=AnimeSuggestor::Anime.new('SCRAPED NAME', url3)
-s3a1=AnimeSuggestor::Anime.new('SCRAPED NAME', url4)
-s3a2=AnimeSuggestor::Anime.new('SCRAPED NAME', url4)
-s3a3=AnimeSuggestor::Anime.new('SCRAPED NAME', url4)
-s3a4=AnimeSuggestor::Anime.new('SCRAPED NAME', url4)
-s3a5=AnimeSuggestor::Anime.new('SCRAPED NAME', url4)
-s4a1=AnimeSuggestor::Anime.new('SCRAPED NAME', url5)
-s4a2=AnimeSuggestor::Anime.new('SCRAPED NAME', url5)
-s4a3=AnimeSuggestor::Anime.new('SCRAPED NAME', url5)
-s4a4=AnimeSuggestor::Anime.new('SCRAPED NAME', url5)
-s4a5=AnimeSuggestor::Anime.new('SCRAPED NAME', url5)
-s5a1=AnimeSuggestor::Anime.new('SCRAPED NAME', url6)
-s5a2=AnimeSuggestor::Anime.new('SCRAPED NAME', url6)
-s5a3=AnimeSuggestor::Anime.new('SCRAPED NAME', url6)
-s5a4=AnimeSuggestor::Anime.new('SCRAPED NAME', url6)
-s5a5=AnimeSuggestor::Anime.new('SCRAPED NAME', url6)
+s1a1= Anime.new('SCRAPED NAME', url2)
+s1a2= Anime.new('SCRAPED NAME', url2)
+s1a3= Anime.new('SCRAPED NAME', url2)
+s1a4= Anime.new('SCRAPED NAME', url2)
+s1a5= Anime.new('SCRAPED NAME', url2)
+s2a1= Anime.new('SCRAPED NAME', url3)
+s2a2= Anime.new('SCRAPED NAME', url3)
+s2a3= Anime.new('SCRAPED NAME', url3)
+s2a4= Anime.new('SCRAPED NAME', url3)
+s2a5= Anime.new('SCRAPED NAME', url3)
+s3a1= Anime.new('SCRAPED NAME', url4)
+s3a2= Anime.new('SCRAPED NAME', url4)
+s3a3= Anime.new('SCRAPED NAME', url4)
+s3a4= Anime.new('SCRAPED NAME', url4)
+s3a5= Anime.new('SCRAPED NAME', url4)
+s4a1= Anime.new('SCRAPED NAME', url5)
+s4a2= Anime.new('SCRAPED NAME', url5)
+s4a3= Anime.new('SCRAPED NAME', url5)
+s4a4= Anime.new('SCRAPED NAME', url5)
+s4a5= Anime.new('SCRAPED NAME', url5)
+s5a1= Anime.new('SCRAPED NAME', url6)
+s5a2= Anime.new('SCRAPED NAME', url6)
+s5a3= Anime.new('SCRAPED NAME', url6)
+s5a4= Anime.new('SCRAPED NAME', url6)
+s5a5= Anime.new('SCRAPED NAME', url6)
