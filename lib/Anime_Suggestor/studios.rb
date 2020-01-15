@@ -15,7 +15,7 @@ class AnimeSuggestor::Studios
   end
   def url
     @formatted = self.name.split(' ').join('_').scan(/\w+/).join('').split('_').join('-').downcase
-    @page = "https://www.anime-planet.com/anime/studios/#{@formatted}"
+    @url = "https://www.anime-planet.com/anime/studios/#{@formatted}"
   end
   def animes
     Anime.all.collect{|anime| anime.studio==self}
