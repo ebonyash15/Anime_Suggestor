@@ -20,28 +20,50 @@ class Anime
     #some iteration 10.times do... anime.studio = studio_1
   end
 end
-1a1=Aninme.new(SCRAPED NAME, URL)
-s1a2=Aninme.new(SCRAPED NAME, URL)
-s1a3=Aninme.new(SCRAPED NAME, URL)
-s1a4=Aninme.new(SCRAPED NAME, URL)
-s1a5=Aninme.new(SCRAPED NAME, URL)
-s2a1=Aninme.new(SCRAPED NAME, URL)
-s2a2=Aninme.new(SCRAPED NAME, URL)
-s2a3=Aninme.new(SCRAPED NAME, URL)
-s2a4=Aninme.new(SCRAPED NAME, URL)
-s2a5=Aninme.new(SCRAPED NAME, URL)
-s3a1=Aninme.new(SCRAPED NAME, URL)
-s3a2=Aninme.new(SCRAPED NAME, URL)
-s3a3=Aninme.new(SCRAPED NAME, URL)
-s3a4=Aninme.new(SCRAPED NAME, URL)
-s3a5=Aninme.new(SCRAPED NAME, URL)
-s4a1=Aninme.new(SCRAPED NAME, URL)
-s4a2=Aninme.new(SCRAPED NAME, URL)
-s4a3=Aninme.new(SCRAPED NAME, URL)
-s4a4=Aninme.new(SCRAPED NAME, URL)
-s4a5=Aninme.new(SCRAPED NAME, URL)
-s5a1=Aninme.new(SCRAPED NAME, URL)
-s5a2=Aninme.new(SCRAPED NAME, URL)
-s5a3=Aninme.new(SCRAPED NAME, URL)
-s5a4=Aninme.new(SCRAPED NAME, URL)
-s5a5=Aninme.new(SCRAPED NAME, URL)
+
+url2=studio_1.url
+page1=open(url2)
+xml2=Nokogiri::HTML(page1)
+
+url3=studio_2.url
+page2=open(url3)
+xml3=Nokogiri::HTML(page2)
+
+url4=studio_3.url
+page3=open(url4)
+xml4=Nokogiri::HTML(page3)
+
+url5=studio_4.url
+page4=open(url5)
+xml5=Nokogiri::HTML(page4)
+
+url6=studio_5.url
+page5=open(url6)
+xml6=Nokogiri::HTML(page5)
+
+
+1a1=Aninme.new('SCRAPED NAME', url2
+s1a2=Aninme.new('SCRAPED NAME', url2)
+s1a3=Aninme.new('SCRAPED NAME', url2)
+s1a4=Aninme.new('SCRAPED NAME', url2)
+s1a5=Aninme.new('SCRAPED NAME', url2)
+s2a1=Aninme.new('SCRAPED NAME', url3)
+s2a2=Aninme.new('SCRAPED NAME', url3)
+s2a3=Aninme.new('SCRAPED NAME', url3)
+s2a4=Aninme.new('SCRAPED NAME', url3)
+s2a5=Aninme.new('SCRAPED NAME', url3)
+s3a1=Aninme.new('SCRAPED NAME', url4)
+s3a2=Aninme.new('SCRAPED NAME', url4)
+s3a3=Aninme.new('SCRAPED NAME', url4)
+s3a4=Aninme.new('SCRAPED NAME', url4)
+s3a5=Aninme.new('SCRAPED NAME', url4)
+s4a1=Aninme.new('SCRAPED NAME', url5)
+s4a2=Aninme.new('SCRAPED NAME', url5)
+s4a3=Aninme.new('SCRAPED NAME', url5)
+s4a4=Aninme.new('SCRAPED NAME', url5)
+s4a5=Aninme.new('SCRAPED NAME', url5)
+s5a1=Aninme.new('SCRAPED NAME', url6)
+s5a2=Aninme.new('SCRAPED NAME', url6)
+s5a3=Aninme.new('SCRAPED NAME', url6)
+s5a4=Aninme.new('SCRAPED NAME', url6)
+s5a5=Aninme.new('SCRAPED NAME', url6)
