@@ -1,4 +1,3 @@
-require 'pry'
 require_relative './concerns.rb'
 require 'nokogiri'
 require 'open-uri'
