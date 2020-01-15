@@ -20,6 +20,9 @@ class AnimeSuggestor::Studios
   def animes
     Anime.all.collect{|anime| anime.studio==self}
   end
+  def studio=
+    Studio.all.find{|studio|studio.url==self.url}
+  end
 end
 
 s_url = 'https://www.anime-planet.com/anime/studios/?sort=num_likes&order=desc' #studios sorted most to least loved
