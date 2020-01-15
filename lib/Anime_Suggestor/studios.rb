@@ -19,7 +19,7 @@ class AnimeSuggestor::Studios
     @url = "https://www.anime-planet.com/anime/studios/#{@formatted}"
   end
   def animes
-    Anime.all.collect{|anime| anime.studio==self}
+    AnimeSuggestor::Anime.all.collect{|anime| anime.studio==self}
   end
   def studio=
     self.class.all.find{|studio|studio.url==self.url}
