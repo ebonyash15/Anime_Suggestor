@@ -1,4 +1,5 @@
 require 'pry'
+require '../Anime_Suggestor.rb'
 module Scrape
   module InstanceMethods
     @@all=[]
