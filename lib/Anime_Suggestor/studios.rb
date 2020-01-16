@@ -9,7 +9,7 @@ class Studios
     save
   end
   def self.today
-    puts self.all.collect{|studio|studio.name}
+    puts self.all.each_with_index{|studio, index|puts "#{index+1} #{studio.name}"}
   end
   def url
     @formatted = self.name.split(' ').join('_').scan(/\w+/).join('').split('_').join('-').downcase
