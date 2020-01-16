@@ -14,16 +14,7 @@ class Anime
   def save
     @@all<<self
   end
-  def name=()
-    formatted = self.studio.name.downcase.split('.').join('').split(' ').join('_')
-    a_url = 'https://www.anime-planet.com/anime/studios/#{formatted}'
-    webpage=open(a_url)
-    result=Nokogiri::HTML(webpage)
-    anime.name = result.css('h3')
-    #some iteration 10.times do... anime.studio = studio_1
-  end
 end
-
 
 s1a1= Anime.new('SCRAPED NAME', url2)
 s1a2= Anime.new('SCRAPED NAME', url2)
