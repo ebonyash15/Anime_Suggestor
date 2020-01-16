@@ -8,6 +8,12 @@ class Studios
     @name=name
     save
   end
+  def self.all
+    @@all
+  end
+  def save
+    @@all<<self
+  end
   def self.today
     puts self.all.each_with_index{|studio, index|puts "#{index+1} #{studio.name}"}
   end

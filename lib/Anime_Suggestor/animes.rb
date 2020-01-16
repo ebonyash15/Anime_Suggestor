@@ -1,13 +1,18 @@
 require_relative './concerns.rb'
 class Anime
-  extend Scrape::ClassMethods
-  include Scrape::InstanceMethods
+  @@all=[]
   attr_reader :studio, :name, :url
   def initialize(name, url)
     @name=name
     @url=url
     @studio= Studios.all.find{|studio|studio.url==url}
     save
+  end
+  def self.all
+    @@all
+  end
+  def save
+    @@all<<self
   end
   def name=()
     formatted = self.studio.name.downcase.split('.').join('').split(' ').join('_')

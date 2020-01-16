@@ -1,21 +1,8 @@
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
-module Scrape
-  module InstanceMethods
-    @@all=[]
-    def save
-      @@all<<self
-    end
-  end
-  module ClassMethods
-    @@all=[]
-    def all
-      @@all
-    end
-  end
-end
-
+require_relative './studios.rb'
+require_relative './animes.rb'
 
 s_url = 'https://www.anime-planet.com/anime/studios/?sort=num_likes&order=desc' #studios sorted most to least loved
 webpage=open(s_url)
