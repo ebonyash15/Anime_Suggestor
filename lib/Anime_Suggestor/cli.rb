@@ -8,7 +8,7 @@ class AnimeSuggestor::CLI
   end
   def list_studios
     puts "Anime-Planet's Top 5 Anime Studios:"
-    AnimeSuggestor::Studios.today
+    Studios.today
   end
   def menu
     puts "Which studio's shows would you like to view?\nPlease enter the correlating number:"
@@ -17,15 +17,20 @@ class AnimeSuggestor::CLI
       input=gets.strip.downcase
       case input
       when "1"
-        puts "studio1 stuff"
+        puts studio_1.name
+        puts studio_1.animes
       when"2"
-        puts "studio2 stuff"
+        puts studio_2.name
+        puts studio_2.animes
       when "3"
-        puts "studio3 stuff"
+        puts studio_3.name
+        puts studio_3.animes
       when "4"
-        puts "studio4 stuff"
+        puts studio_4.name
+        puts studio_4.animes
       when "5"
-        puts "studio5 stuff"
+        puts studio_5.name
+        puts studio_5.animes
       when "list"
         self.list_studios
       else

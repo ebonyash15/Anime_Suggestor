@@ -16,7 +16,11 @@ class Studios
     @url = "https://www.anime-planet.com/anime/studios/#{@formatted}"
   end
   def animes
-    Anime.all.collect{|anime| anime.studio==self}
+    Anime.all.each do |anime|
+      if anime.studio==self
+        puts anime.name
+      end
+    end
   end
   def studio=
     self.class.all.find{|studio|studio.url==self.url}
