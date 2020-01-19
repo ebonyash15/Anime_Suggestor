@@ -19,20 +19,11 @@ class CLI
     puts "From which studio would you like a recommendation?\nPlease enter the correlating number:"
     input = nil
     while input != "exit"
-      input=gets.strip.downcase
-      case input.to_s
-      when "1"
-        puts "Of #{Studio.all[0].name}\'s #{Studio.all[0].anime_count}s, your recommendation is #{Studio.all[0].anime}."
-        print studio1
-      when "2"
-        puts "Of #{studio2.name}\'s #{studio2.anime_count} animes, your recommendation is #{studio2.recommended_anime}."
-      when "3"
-        puts "Of #{studio3.name}\'s #{studio3.anime_count} animes, your recommendation is #{studio3.recommended_anime}."
-      when "4"
-        puts "Of #{studio4.name}\'s #{studio4.anime_count} animes, your recommendation is #{studio4.recommended_anime}."
-      when "5"
-        puts "Of #{studio5.name}\'s #{studio5.anime_count} animes, your recommendation is #{studio5.recommended_anime}."
-      when "list"
+      input=gets.strip
+      index= input.to_i-1
+      if input.downcase != "list"
+        puts "Of #{Studio.all[index].name}\'s #{Studio.all[index].anime_count}s, your recommendation is #{Studio.all[index].anime}."
+      elsif "list"
         self.list_studios
       else
         puts "Which studio would you like to explore?"
