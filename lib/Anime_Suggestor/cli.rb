@@ -1,6 +1,6 @@
 #CLI Controller file - responsible for user interraction
 require_relative './studios.rb'
-class AnimeSuggestor::CLI
+class CLI
   def call
     list_studios
     menu
@@ -8,7 +8,7 @@ class AnimeSuggestor::CLI
   end
   def list_studios
     puts "Anime-Planet's Top 5 Anime Studios:"
-    Studios.all.each_with_index{|studio, index|puts "#{index+1}. #{studio.name}"}
+    Studio.all.each_with_index{|studio, index|puts "#{index+1}. #{studio.name}"}
   end
   def menu
     puts "From which studio would you like a recommendation?\nPlease enter the correlating number:"
