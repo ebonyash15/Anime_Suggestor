@@ -21,10 +21,12 @@ class CLI
     while input != "exit"
       input=gets.strip
       index= input.to_i-1
-      if input.downcase != "list"
+      if input.downcase != "list" && index == 0..4
         puts "Of #{Studio.all[index].name}\'s #{Studio.all[index].anime_count}s, your recommendation is #{Studio.all[index].anime}."
       elsif "list"
         self.list_studios
+      elsif index != 0..4
+        puts "Unfortunately, that is not a valid entry, please select a number between 1 and 5. You can enter \"list\" to see the studios again."
       else
         puts "Which studio would you like to explore?"
         puts "If you like the studio you already selected, but not the show please re-enter that studio's number for a new recommendation!"
