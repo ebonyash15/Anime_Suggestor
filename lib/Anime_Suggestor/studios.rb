@@ -33,8 +33,9 @@ class Studios
   end
 end
 
-studio_1=Studios.new(xml.css('a').text.scan(/(?<=tag)\w*[^0-9 ]/).to_s)
-studio_2=Studios.new(xml.css('a').text.split(/\d+ anime/)[1])
-studio_3= Studios.new(xml.css('a').text.split(/\d+ anime/)[2])
-studio_4= Studios.new(xml.css('a').text.split(/\d+ anime/)[3])
-studio_5= Studios.new(xml.css('a').text.split(/\d+ anime/)[4])
+studio_names=xml1.css('tr a').text.split(/\d+ anime/)
+studio_1= Studios.new(studio_names[0])
+studio_2= Studios.new(studio_names[1])
+studio_3= Studios.new(studio_names[2])
+studio_4= Studios.new(studio_names[3])
+studio_5= Studios.new(studio_names[4])
