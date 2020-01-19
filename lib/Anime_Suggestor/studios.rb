@@ -1,6 +1,6 @@
 require_relative './concerns.rb'
 class Studio
-  @@all=[]
+@@all=[]
   def initialize(index)
     @index=index
     Scraper.scrape_studios[@index]
@@ -19,9 +19,3 @@ class Studio
     @@all
   end
 end
-
-studio1=Studio.new(0)
-studio2=Studio.new(1)
-studio3=Studio.new(2)
-studio4=Studio.new(3)
-studio5=Studio.new(4)

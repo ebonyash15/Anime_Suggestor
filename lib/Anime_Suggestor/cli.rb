@@ -1,5 +1,10 @@
 #CLI Controller file - responsible for user interraction
 require_relative './studios.rb'
+studio1 = Studio.new(0)
+studio2 = Studio.new(1)
+studio3 = Studio.new(2)
+studio4 = Studio.new(3)
+studio5 = Studio.new(4)
 class CLI
   def call
     list_studios
@@ -15,10 +20,11 @@ class CLI
     input = nil
     while input != "exit"
       input=gets.strip.downcase
-      case input
+      case input.to_s
       when "1"
-        puts "Of #{studio1.name}\'s #{studio1.anime_count} animes, your recommendation is #{studio1.recommended_anime}."
-      when"2"
+        puts "Of #{Studio.all[0].name}\'s #{Studio.all[0].anime_count}s, your recommendation is #{Studio.all[0].anime}."
+        print studio1
+      when "2"
         puts "Of #{studio2.name}\'s #{studio2.anime_count} animes, your recommendation is #{studio2.recommended_anime}."
       when "3"
         puts "Of #{studio3.name}\'s #{studio3.anime_count} animes, your recommendation is #{studio3.recommended_anime}."
