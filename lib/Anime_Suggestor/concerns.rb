@@ -1,17 +1,18 @@
-require_relative './studios.rb'
-require_relative './animes.rb'
-class Studio
-  def initialize(index)
-    @index=index
-    Scraper.scrape_studios[@index]
-  end
-  def name
-    Scraper.scrape_studios[@index][:name]
-  end
-  def anime_count
-    Scraper.scrape_studios[@index][:anime_count]
-  end
-  def anime
-    Scraper.scrape_studios[@index][:recommended_anime]
+require 'open-uri'
+require 'nokogiri'
+class Scraper
+  def self.scrape_studios(index_url="https://www.anime-planet.com/anime/studios/?sort=num_likes&order=desc")
+    page = Nokogiri::HTML(open(index_url))
+    studios=[]
+    page.css("tr").each do |studio|
+      name = studio.css("td.volsChRating h2 a").text
+      anime_count = studio.css("td.volsChRating a.items").text
+      anime = studio.css("td.cardHand a ul li.card").attribute("title").value
+      studio_info = {:name => name,
+        :anime_count => anime_count,
+        :recommended_anime => anime}
+      studios << studio_info
+      end
+   studios
   end
 end
