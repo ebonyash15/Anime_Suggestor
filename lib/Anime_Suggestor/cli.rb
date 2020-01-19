@@ -8,33 +8,30 @@ class AnimeSuggestor::CLI
   end
   def list_studios
     puts "Anime-Planet's Top 5 Anime Studios:"
-    Studios.today
+    Studios.all.each_with_index{|studio, index|puts "#{index+1}. #{studio.name}"}
   end
   def menu
-    puts "Which studio's shows would you like to view?\nPlease enter the correlating number:"
+    puts "From which studio would you like a recommendation?\nPlease enter the correlating number:"
     input = nil
     while input != "exit"
       input=gets.strip.downcase
       case input
       when "1"
-        puts studio_1.name
-        puts studio_1.animes
+        puts "Of #{studio1.name}\'s #{studio1.anime_count} animes, your recommendation is #{studio1.recommended_anime}."
       when"2"
-        puts studio_2.name
-        puts studio_2.animes
+        puts "Of #{studio2.name}\'s #{studio2.anime_count} animes, your recommendation is #{studio2.recommended_anime}."
       when "3"
-        puts studio_3.name
-        puts studio_3.animes
+        puts "Of #{studio3.name}\'s #{studio3.anime_count} animes, your recommendation is #{studio3.recommended_anime}."
       when "4"
-        puts studio_4.name
-        puts studio_4.animes
+        puts "Of #{studio4.name}\'s #{studio4.anime_count} animes, your recommendation is #{studio4.recommended_anime}."
       when "5"
-        puts studio_5.name
-        puts studio_5.animes
+        puts "Of #{studio5.name}\'s #{studio5.anime_count} animes, your recommendation is #{studio5.recommended_anime}."
       when "list"
         self.list_studios
       else
-        puts "Which studio would you like to explore? You may type \'list\' to see the list again or \'exit\' to quit program."
+        puts "Which studio would you like to explore?"
+        puts "If you like the studio you already selected, but not the show please re-enter that studio's number for a new recommendation!"
+        puts "You may type \'list\' to see the list again or \'exit\' to quit program."
       end
     end
   end

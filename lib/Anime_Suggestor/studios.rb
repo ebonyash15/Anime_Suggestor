@@ -1,41 +1,22 @@
 require_relative './concerns.rb'
-class Studios
-  extend Scrape::ClassMethods
-  include Scrape::InstanceMethods
-  @@all=[]
-  attr_accessor :name, :studio, :url
-  def initialize(name)
-    @name=name
-    save
+class Studio
+  def initialize(index)
+    @index=index
+    Scraper.scrape_studios[@index]
   end
-  def self.all
-    @@all
+  def name
+    Scraper.scrape_studios[@index][:name]
   end
-  def save
-    @@all<<self
+  def anime_count
+    Scraper.scrape_studios[@index][:anime_count]
   end
-  def self.today
-    puts self.all.each_with_index{|studio, index|puts "#{index+1} #{studio.name}"}
-  end
-  def url
-    @formatted = self.name.split(' ').join('_').scan(/\w+/).join('').split('_').join('-').downcase
-    @url = "https://www.anime-planet.com/anime/studios/#{@formatted}"
-  end
-  def animes
-    Anime.all.each do |anime|
-      if anime.studio==self
-        puts anime.name
-      end
-    end
-  end
-  def studio=
-    self.class.all.find{|studio|studio.url==self.url}
+  def anime
+    Scraper.scrape_studios[@index][:recommended_anime]
   end
 end
 
-studio_names=xml1.css('tr a').text.split(/\d+ anime/)
-studio_1= Studios.new(studio_names[0])
-studio_2= Studios.new(studio_names[1])
-studio_3= Studios.new(studio_names[2])
-studio_4= Studios.new(studio_names[3])
-studio_5= Studios.new(studio_names[4])
+studio1=Studio.new(0)
+studio2=Studio.new(1)
+studio3=Studio.new(2)
+studio4=Studio.new(3)
+studio5=Studio.new(4)
