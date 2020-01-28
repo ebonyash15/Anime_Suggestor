@@ -22,7 +22,7 @@ class CLI
         self.list_studios
       elsif index.between?(0,Studio.all.length)
         puts "Of #{Studio.all[index].name}\'s #{Studio.all[index].anime_count}s, your recommendation is #{Studio.all[index].anime}."
-        puts "If you like the studio you already selected, but not the show please re-enter that studio's number for a new recommendation! Or select another studio."
+        puts "Hopefully you enjoy this show! Please enter \'exit\' to quit the program or select another studio."
       else
         puts "Unfortunately, that is not a valid entry, please select a number between 1 and 5. You can enter \"list\" to see the studios again or \'exit\' to quit program."
       end
