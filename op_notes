@@ -25,3 +25,15 @@ valid user commands:
     	5.J.C.Staff"
 
 "Which studio's shows would you like to view? \n Please enter the correlating number:"
+
+
+
+
+
+
+
+
+MOVE dependencies to one file -- Anime_Suggestor.rb
+Make ReadME more thorough
+"Anime Planet's top 5 Studios" >> is now all 35 studios.
+Module name spacing -- module AnimeSuggestor::class_names
